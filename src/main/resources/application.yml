@@ -14,4 +14,10 @@ spring:
     locations: classpath:db/migration
     table: flyway_schema_history
 
+ai:
+  api-key: ${AI_API_KEY:}
+  base-url: https://api.deepseek.com/v1
+
+
+
 

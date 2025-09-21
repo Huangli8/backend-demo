@@ -50,5 +50,24 @@ public class GlobalExceptionHandler {
         resp.put("message", ex.getMessage());
         return resp;
     }
-}
 
+    @ExceptionHandler(InvalidDateRangeException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ResponseBody
+    public Map<String, Object> handleInvalidDateRange(InvalidDateRangeException ex) {
+        Map<String, Object> resp = new HashMap<>();
+        resp.put("code", 400);
+        resp.put("message", ex.getMessage());
+        return resp;
+    }
+
+    @ExceptionHandler(InvalidBudgetRangeException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ResponseBody
+    public Map<String, Object> handleInvalidBudgetRange(InvalidBudgetRangeException ex) {
+        Map<String, Object> resp = new HashMap<>();
+        resp.put("code", 400);
+        resp.put("message", ex.getMessage());
+        return resp;
+    }
+}
